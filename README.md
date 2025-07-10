@@ -60,7 +60,7 @@ Finally click Run All.
 gogotte will place files with the extension `.out.gd` inside of your feature directories, which Gut will execute. It may be a good idea to put `*.out.gd` in your gitignore.
 
 ### Step Definition
-See `./example/steps/example_steps.gd.`
+See `./gogotte_examples/steps/example_steps.gd.`
 
 Each step class should have a Dictionary `steps`, which maps step patterns to Callables.
 ```gdscript
