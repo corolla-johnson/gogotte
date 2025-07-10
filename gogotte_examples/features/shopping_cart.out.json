@@ -1,0 +1,500 @@
+{
+    "_gogotte_metadata": {
+        "feature_path": "res://gogotte_examples/features/shopping_cart.feature",
+        "filename": "shopping_cart.feature"
+    },
+    "comments": [],
+    "feature": {
+        "children": [
+            {
+                "background": {
+                    "description": "",
+                    "id": "6",
+                    "keyword": "Background",
+                    "location": {
+                        "column": 3,
+                        "line": 6
+                    },
+                    "name": "",
+                    "steps": [
+                        {
+                            "dataTable": {
+                                "location": {
+                                    "column": 7,
+                                    "line": 8
+                                },
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "location": {
+                                                    "column": 9,
+                                                    "line": 8
+                                                },
+                                                "value": "name"
+                                            },
+                                            {
+                                                "location": {
+                                                    "column": 21,
+                                                    "line": 8
+                                                },
+                                                "value": "price"
+                                            },
+                                            {
+                                                "location": {
+                                                    "column": 29,
+                                                    "line": 8
+                                                },
+                                                "value": "stock"
+                                            }
+                                        ],
+                                        "id": "0",
+                                        "location": {
+                                            "column": 7,
+                                            "line": 8
+                                        }
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "location": {
+                                                    "column": 9,
+                                                    "line": 9
+                                                },
+                                                "value": "Apple"
+                                            },
+                                            {
+                                                "location": {
+                                                    "column": 21,
+                                                    "line": 9
+                                                },
+                                                "value": "1.00"
+                                            },
+                                            {
+                                                "location": {
+                                                    "column": 29,
+                                                    "line": 9
+                                                },
+                                                "value": "10"
+                                            }
+                                        ],
+                                        "id": "1",
+                                        "location": {
+                                            "column": 7,
+                                            "line": 9
+                                        }
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "location": {
+                                                    "column": 9,
+                                                    "line": 10
+                                                },
+                                                "value": "Banana"
+                                            },
+                                            {
+                                                "location": {
+                                                    "column": 21,
+                                                    "line": 10
+                                                },
+                                                "value": "0.50"
+                                            },
+                                            {
+                                                "location": {
+                                                    "column": 29,
+                                                    "line": 10
+                                                },
+                                                "value": "15"
+                                            }
+                                        ],
+                                        "id": "2",
+                                        "location": {
+                                            "column": 7,
+                                            "line": 10
+                                        }
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "location": {
+                                                    "column": 9,
+                                                    "line": 11
+                                                },
+                                                "value": "Orange"
+                                            },
+                                            {
+                                                "location": {
+                                                    "column": 21,
+                                                    "line": 11
+                                                },
+                                                "value": "0.75"
+                                            },
+                                            {
+                                                "location": {
+                                                    "column": 29,
+                                                    "line": 11
+                                                },
+                                                "value": "8"
+                                            }
+                                        ],
+                                        "id": "3",
+                                        "location": {
+                                            "column": 7,
+                                            "line": 11
+                                        }
+                                    }
+                                ]
+                            },
+                            "id": "4",
+                            "keyword": "Given ",
+                            "keywordType": "Context",
+                            "location": {
+                                "column": 5,
+                                "line": 7
+                            },
+                            "text": "the store has the following items:"
+                        },
+                        {
+                            "id": "5",
+                            "keyword": "And ",
+                            "keywordType": "Conjunction",
+                            "location": {
+                                "column": 5,
+                                "line": 12
+                            },
+                            "text": "I have an empty shopping cart"
+                        }
+                    ]
+                }
+            },
+            {
+                "scenario": {
+                    "description": "",
+                    "examples": [],
+                    "id": "10",
+                    "keyword": "Scenario",
+                    "location": {
+                        "column": 3,
+                        "line": 14
+                    },
+                    "name": "Adding an item to the cart",
+                    "steps": [
+                        {
+                            "id": "7",
+                            "keyword": "When ",
+                            "keywordType": "Action",
+                            "location": {
+                                "column": 5,
+                                "line": 15
+                            },
+                            "text": "I add 2 \"Apple\" to my cart"
+                        },
+                        {
+                            "id": "8",
+                            "keyword": "Then ",
+                            "keywordType": "Outcome",
+                            "location": {
+                                "column": 5,
+                                "line": 16
+                            },
+                            "text": "my cart should contain 2 \"Apple\""
+                        },
+                        {
+                            "id": "9",
+                            "keyword": "And ",
+                            "keywordType": "Conjunction",
+                            "location": {
+                                "column": 5,
+                                "line": 17
+                            },
+                            "text": "my cart total should be 2.00"
+                        }
+                    ],
+                    "tags": []
+                }
+            },
+            {
+                "scenario": {
+                    "description": "",
+                    "examples": [],
+                    "id": "16",
+                    "keyword": "Scenario",
+                    "location": {
+                        "column": 3,
+                        "line": 19
+                    },
+                    "name": "Adding multiple items to the cart",
+                    "steps": [
+                        {
+                            "id": "11",
+                            "keyword": "When ",
+                            "keywordType": "Action",
+                            "location": {
+                                "column": 5,
+                                "line": 20
+                            },
+                            "text": "I add 3 \"Apple\" to my cart"
+                        },
+                        {
+                            "id": "12",
+                            "keyword": "And ",
+                            "keywordType": "Conjunction",
+                            "location": {
+                                "column": 5,
+                                "line": 21
+                            },
+                            "text": "I add 2 \"Banana\" to my cart"
+                        },
+                        {
+                            "id": "13",
+                            "keyword": "Then ",
+                            "keywordType": "Outcome",
+                            "location": {
+                                "column": 5,
+                                "line": 22
+                            },
+                            "text": "my cart should contain 3 \"Apple\""
+                        },
+                        {
+                            "id": "14",
+                            "keyword": "And ",
+                            "keywordType": "Conjunction",
+                            "location": {
+                                "column": 5,
+                                "line": 23
+                            },
+                            "text": "my cart should contain 2 \"Banana\""
+                        },
+                        {
+                            "id": "15",
+                            "keyword": "And ",
+                            "keywordType": "Conjunction",
+                            "location": {
+                                "column": 5,
+                                "line": 24
+                            },
+                            "text": "my cart total should be 4.00"
+                        }
+                    ],
+                    "tags": []
+                }
+            },
+            {
+                "scenario": {
+                    "description": "",
+                    "examples": [],
+                    "id": "23",
+                    "keyword": "Scenario",
+                    "location": {
+                        "column": 3,
+                        "line": 26
+                    },
+                    "name": "Removing items from the cart",
+                    "steps": [
+                        {
+                            "id": "17",
+                            "keyword": "When ",
+                            "keywordType": "Action",
+                            "location": {
+                                "column": 5,
+                                "line": 27
+                            },
+                            "text": "I add 3 \"Apple\" to my cart"
+                        },
+                        {
+                            "id": "18",
+                            "keyword": "And ",
+                            "keywordType": "Conjunction",
+                            "location": {
+                                "column": 5,
+                                "line": 28
+                            },
+                            "text": "I add 2 \"Banana\" to my cart"
+                        },
+                        {
+                            "id": "19",
+                            "keyword": "And ",
+                            "keywordType": "Conjunction",
+                            "location": {
+                                "column": 5,
+                                "line": 29
+                            },
+                            "text": "I remove 1 \"Apple\" from my cart"
+                        },
+                        {
+                            "id": "20",
+                            "keyword": "Then ",
+                            "keywordType": "Outcome",
+                            "location": {
+                                "column": 5,
+                                "line": 30
+                            },
+                            "text": "my cart should contain 2 \"Apple\""
+                        },
+                        {
+                            "id": "21",
+                            "keyword": "And ",
+                            "keywordType": "Conjunction",
+                            "location": {
+                                "column": 5,
+                                "line": 31
+                            },
+                            "text": "my cart should contain 2 \"Banana\""
+                        },
+                        {
+                            "id": "22",
+                            "keyword": "And ",
+                            "keywordType": "Conjunction",
+                            "location": {
+                                "column": 5,
+                                "line": 32
+                            },
+                            "text": "my cart total should be 3.00"
+                        }
+                    ],
+                    "tags": []
+                }
+            },
+            {
+                "scenario": {
+                    "description": "",
+                    "examples": [],
+                    "id": "28",
+                    "keyword": "Scenario",
+                    "location": {
+                        "column": 3,
+                        "line": 34
+                    },
+                    "name": "Attempting to add out-of-stock items",
+                    "steps": [
+                        {
+                            "id": "24",
+                            "keyword": "Given ",
+                            "keywordType": "Context",
+                            "location": {
+                                "column": 5,
+                                "line": 35
+                            },
+                            "text": "\"Orange\" has 0 items in stock"
+                        },
+                        {
+                            "id": "25",
+                            "keyword": "When ",
+                            "keywordType": "Action",
+                            "location": {
+                                "column": 5,
+                                "line": 36
+                            },
+                            "text": "I try to add 2 \"Orange\" to my cart"
+                        },
+                        {
+                            "id": "26",
+                            "keyword": "Then ",
+                            "keywordType": "Outcome",
+                            "location": {
+                                "column": 5,
+                                "line": 37
+                            },
+                            "text": "I should see an \"Out of stock\" error"
+                        },
+                        {
+                            "id": "27",
+                            "keyword": "And ",
+                            "keywordType": "Conjunction",
+                            "location": {
+                                "column": 5,
+                                "line": 38
+                            },
+                            "text": "my cart should be empty"
+                        }
+                    ],
+                    "tags": []
+                }
+            },
+            {
+                "scenario": {
+                    "description": "",
+                    "examples": [],
+                    "id": "34",
+                    "keyword": "Scenario",
+                    "location": {
+                        "column": 3,
+                        "line": 40
+                    },
+                    "name": "Adding items from a wishlist",
+                    "steps": [
+                        {
+                            "docString": {
+                                "content": "[\n  {\"name\": \"Apple\", \"quantity\": 3},\n  {\"name\": \"Banana\", \"quantity\": 2},\n  {\"name\": \"Orange\", \"quantity\": 1}\n]",
+                                "delimiter": "\"\"\"",
+                                "location": {
+                                    "column": 7,
+                                    "line": 42
+                                }
+                            },
+                            "id": "29",
+                            "keyword": "When ",
+                            "keywordType": "Action",
+                            "location": {
+                                "column": 5,
+                                "line": 41
+                            },
+                            "text": "I import my wishlist with the following items:"
+                        },
+                        {
+                            "id": "30",
+                            "keyword": "Then ",
+                            "keywordType": "Outcome",
+                            "location": {
+                                "column": 5,
+                                "line": 49
+                            },
+                            "text": "my cart should contain 3 \"Apple\""
+                        },
+                        {
+                            "id": "31",
+                            "keyword": "And ",
+                            "keywordType": "Conjunction",
+                            "location": {
+                                "column": 5,
+                                "line": 50
+                            },
+                            "text": "my cart should contain 2 \"Banana\""
+                        },
+                        {
+                            "id": "32",
+                            "keyword": "And ",
+                            "keywordType": "Conjunction",
+                            "location": {
+                                "column": 5,
+                                "line": 51
+                            },
+                            "text": "my cart should contain 1 \"Orange\""
+                        },
+                        {
+                            "id": "33",
+                            "keyword": "And ",
+                            "keywordType": "Conjunction",
+                            "location": {
+                                "column": 5,
+                                "line": 52
+                            },
+                            "text": "my cart total should be 4.75"
+                        }
+                    ],
+                    "tags": []
+                }
+            }
+        ],
+        "description": "  As a customer\n  I want to add items to my shopping cart\n  So that I can purchase them later",
+        "keyword": "Feature",
+        "language": "en",
+        "location": {
+            "column": 1,
+            "line": 1
+        },
+        "name": "Shopping Cart Functionality",
+        "tags": []
+    }
+}

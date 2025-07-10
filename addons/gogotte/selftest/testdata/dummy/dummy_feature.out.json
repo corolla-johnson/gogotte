@@ -1,0 +1,110 @@
+{
+    "_gogotte_metadata": {
+        "feature_path": "res://addons/gogotte/selftest/testdata/dummy/dummy_feature.feature",
+        "filename": "dummy_feature.feature"
+    },
+    "feature": {
+        "children": [
+            {
+                "scenario": {
+                    "keyword": "Scenario",
+                    "name": "First Scenario",
+                    "steps": [
+                        {
+                            "keyword": "Given ",
+                            "keywordType": "Context",
+                            "text": "I do something"
+                        }
+                    ]
+                }
+            },
+            {
+                "scenario": {
+                    "keyword": "Scenario",
+                    "name": "Second Scenario",
+                    "steps": [
+                        {
+                            "keyword": "When ",
+                            "keywordType": "Action",
+                            "text": "I do something else"
+                        }
+                    ]
+                }
+            },
+            {
+                "scenario": {
+                    "examples": [
+                        {
+                            "keyword": "Examples",
+                            "tableBody": [
+                                {
+                                    "cells": [
+                                        {
+                                            "value": "2"
+                                        },
+                                        {
+                                            "value": "2"
+                                        },
+                                        {
+                                            "value": "4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "cells": [
+                                        {
+                                            "value": "10"
+                                        },
+                                        {
+                                            "value": "20"
+                                        },
+                                        {
+                                            "value": "30"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "cells": [
+                                        {
+                                            "value": "22"
+                                        },
+                                        {
+                                            "value": "2"
+                                        },
+                                        {
+                                            "value": "24"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "tableHeader": {
+                                "cells": [
+                                    {
+                                        "value": "a"
+                                    },
+                                    {
+                                        "value": "b"
+                                    },
+                                    {
+                                        "value": "c"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "keyword": "Scenario Outline",
+                    "name": "Third Scenario",
+                    "steps": [
+                        {
+                            "keyword": "Given ",
+                            "keywordType": "Context",
+                            "text": "<a> is to <b> as <b> is to <c>"
+                        }
+                    ]
+                }
+            }
+        ],
+        "description": "This is a test feature",
+        "name": "Test Feature"
+    }
+}

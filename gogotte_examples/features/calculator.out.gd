@@ -1,0 +1,58 @@
+extends GogotteTest
+
+# This contains the full AST of the Gherkin feature.
+var FEATURE_AST: Dictionary = {"_gogotte_metadata":{"feature_path":"res://gogotte_examples/features/calculator.feature","filename":"calculator.feature"},"comments":[],"feature":{"children":[{"rule":{"children":[{"scenario":{"description":"","examples":[],"id":"3","keyword":"Scenario","location":{"column":9,"line":4},"name":"Addition","steps":[{"id":"0","keyword":"Given ","keywordType":"Context","location":{"column":13,"line":5},"text":"x is equal to 3"},{"id":"1","keyword":"When ","keywordType":"Action","location":{"column":13,"line":6},"text":"we add 4 to x"},{"id":"2","keyword":"Then ","keywordType":"Outcome","location":{"column":13,"line":7},"text":"x should be 7"}],"tags":[]}},{"scenario":{"description":"","examples":[{"description":"","id":"10","keyword":"Examples","location":{"column":9,"line":13},"name":"","tableBody":[{"cells":[{"location":{"column":15,"line":15},"value":"2"},{"location":{"column":20,"line":15},"value":"2"},{"location":{"column":25,"line":15},"value":"4"}],"id":"7","location":{"column":13,"line":15}},{"cells":[{"location":{"column":15,"line":16},"value":"10"},{"location":{"column":20,"line":16},"value":"20"},{"location":{"column":25,"line":16},"value":"30"}],"id":"8","location":{"column":13,"line":16}},{"cells":[{"location":{"column":15,"line":17},"value":"22"},{"location":{"column":20,"line":17},"value":"2"},{"location":{"column":25,"line":17},"value":"24"}],"id":"9","location":{"column":13,"line":17}}],"tableHeader":{"cells":[{"location":{"column":15,"line":14},"value":"a"},{"location":{"column":20,"line":14},"value":"b"},{"location":{"column":25,"line":14},"value":"c"}],"id":"6","location":{"column":13,"line":14}},"tags":[]}],"id":"11","keyword":"Scenario Outline","location":{"column":9,"line":9},"name":"Outline Addition","steps":[{"id":"4","keyword":"When ","keywordType":"Action","location":{"column":13,"line":10},"text":"we add the numbers <a> and <b>"},{"id":"5","keyword":"Then ","keywordType":"Outcome","location":{"column":13,"line":11},"text":"we should get <c>"}],"tags":[]}}],"description":"","id":"12","keyword":"Rule","location":{"column":5,"line":3},"name":"Addition should work","tags":[]}},{"rule":{"children":[{"scenario":{"description":"","examples":[],"id":"16","keyword":"Scenario","location":{"column":9,"line":20},"name":"Subtraction","steps":[{"id":"13","keyword":"Given ","keywordType":"Context","location":{"column":13,"line":21},"text":"x is equal to 10"},{"id":"14","keyword":"When ","keywordType":"Action","location":{"column":13,"line":22},"text":"we subtract 2 from x"},{"id":"15","keyword":"Then ","keywordType":"Outcome","location":{"column":13,"line":23},"text":"x should be 8"}],"tags":[]}},{"scenario":{"description":"","examples":[],"id":"22","keyword":"Scenario","location":{"column":9,"line":25},"name":"Datatable","steps":[{"dataTable":{"location":{"column":17,"line":27},"rows":[{"cells":[{"location":{"column":19,"line":27},"value":"x"},{"location":{"column":24,"line":27},"value":"y"},{"location":{"column":29,"line":27},"value":"z"}],"id":"17","location":{"column":17,"line":27}},{"cells":[{"location":{"column":19,"line":28},"value":"10"},{"location":{"column":24,"line":28},"value":"11"},{"location":{"column":29,"line":28},"value":"12"}],"id":"18","location":{"column":17,"line":28}}]},"id":"19","keyword":"Given ","keywordType":"Context","location":{"column":13,"line":26},"text":"we initialize the variables to these"},{"id":"20","keyword":"When ","keywordType":"Action","location":{"column":13,"line":29},"text":"we subtract 2 from x"},{"id":"21","keyword":"Then ","keywordType":"Outcome","location":{"column":13,"line":30},"text":"x should be 8"}],"tags":[]}},{"scenario":{"description":"","examples":[],"id":"26","keyword":"Scenario","location":{"column":9,"line":32},"name":"Docstring","steps":[{"docString":{"content":"    7","delimiter":"\"\"\"","location":{"column":13,"line":34}},"id":"23","keyword":"Given ","keywordType":"Context","location":{"column":13,"line":33},"text":"x is the following value"},{"id":"24","keyword":"When ","keywordType":"Action","location":{"column":13,"line":37},"text":"we subtract 2 from x"},{"id":"25","keyword":"Then ","keywordType":"Outcome","location":{"column":13,"line":38},"text":"x should be 5"}],"tags":[]}}],"description":"","id":"27","keyword":"Rule","location":{"column":5,"line":19},"name":"Subtraction should work","tags":[]}},{"rule":{"children":[{"scenario":{"description":"","examples":[],"id":"29","keyword":"Scenario","location":{"column":9,"line":41},"name":"Always fails","steps":[{"id":"28","keyword":"Given ","keywordType":"Context","location":{"column":13,"line":42},"text":"a step that always fails"}],"tags":[]}}],"description":"","id":"30","keyword":"Rule","location":{"column":5,"line":40},"name":"This scenario should fail","tags":[]}},{"rule":{"children":[{"scenario":{"description":"","examples":[],"id":"35","keyword":"Scenario","location":{"column":9,"line":46},"name":"Skip me","steps":[{"id":"31","keyword":"Given ","keywordType":"Context","location":{"column":13,"line":47},"text":"x is equal to 10"},{"id":"32","keyword":"When ","keywordType":"Action","location":{"column":13,"line":48},"text":"we subtract 2 from x"},{"id":"33","keyword":"Then ","keywordType":"Outcome","location":{"column":13,"line":49},"text":"x should be 8"}],"tags":[{"id":"34","location":{"column":9,"line":45},"name":"@skip"}]}}],"description":"","id":"36","keyword":"Rule","location":{"column":5,"line":44},"name":"This scenario should not be compiled or executed","tags":[]}}],"description":"","keyword":"Feature","language":"en","location":{"column":1,"line":1},"name":"Calculator","tags":[]}}
+
+# These always begin with test_scenario_x followed by the scenario's name if available.
+# The index disambiguates them if they have no name.
+func test_scenario_0_addition() -> void:
+    _begin(0, -1)
+    _step("Given ", "x is equal to 3", null, null)
+    _step("When ", "we add 4 to x", null, null)
+    _step("Then ", "x should be 7", null, null)
+    _end(0)
+
+func test_scenario_1_outline_addition_0() -> void:
+    _begin(1, 0)
+    _step("When ", "we add the numbers 2 and 2", null, null)
+    _step("Then ", "we should get 4", null, null)
+    _end(1)
+
+func test_scenario_1_outline_addition_1() -> void:
+    _begin(1, 1)
+    _step("When ", "we add the numbers 10 and 20", null, null)
+    _step("Then ", "we should get 30", null, null)
+    _end(1)
+
+func test_scenario_1_outline_addition_2() -> void:
+    _begin(1, 2)
+    _step("When ", "we add the numbers 22 and 2", null, null)
+    _step("Then ", "we should get 24", null, null)
+    _end(1)
+
+func test_scenario_2_subtraction() -> void:
+    _begin(2, -1)
+    _step("Given ", "x is equal to 10", null, null)
+    _step("When ", "we subtract 2 from x", null, null)
+    _step("Then ", "x should be 8", null, null)
+    _end(2)
+
+func test_scenario_3_datatable() -> void:
+    _begin(3, -1)
+    _step("Given ", "we initialize the variables to these", {"location":{"column":17,"line":27},"rows":[{"cells":[{"location":{"column":19,"line":27},"value":"x"},{"location":{"column":24,"line":27},"value":"y"},{"location":{"column":29,"line":27},"value":"z"}],"id":"17","location":{"column":17,"line":27}},{"cells":[{"location":{"column":19,"line":28},"value":"10"},{"location":{"column":24,"line":28},"value":"11"},{"location":{"column":29,"line":28},"value":"12"}],"id":"18","location":{"column":17,"line":28}}]}, null)
+    _step("When ", "we subtract 2 from x", null, null)
+    _step("Then ", "x should be 8", null, null)
+    _end(3)
+
+func test_scenario_4_docstring() -> void:
+    _begin(4, -1)
+    _step("Given ", "x is the following value", null, "    7")
+    _step("When ", "we subtract 2 from x", null, null)
+    _step("Then ", "x should be 5", null, null)
+    _end(4)
+
+func test_scenario_5_always_fails() -> void:
+    _begin(5, -1)
+    _step("Given ", "a step that always fails", null, null)
+    _end(5)
+

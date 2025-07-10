@@ -1,0 +1,6 @@
+{
+    "step_dirs": [
+        "res://gogotte_examples/steps/"
+    ],
+    "save_ast": true
+}
