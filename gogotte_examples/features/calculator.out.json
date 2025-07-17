@@ -16,8 +16,8 @@
                                 "id": "3",
                                 "keyword": "Scenario",
                                 "location": {
-                                    "column": 9,
-                                    "line": 4
+                                    "column": 9.0,
+                                    "line": 5.0
                                 },
                                 "name": "Addition",
                                 "steps": [
@@ -26,8 +26,8 @@
                                         "keyword": "Given ",
                                         "keywordType": "Context",
                                         "location": {
-                                            "column": 13,
-                                            "line": 5
+                                            "column": 13.0,
+                                            "line": 6.0
                                         },
                                         "text": "x is equal to 3"
                                     },
@@ -36,8 +36,8 @@
                                         "keyword": "When ",
                                         "keywordType": "Action",
                                         "location": {
-                                            "column": 13,
-                                            "line": 6
+                                            "column": 13.0,
+                                            "line": 7.0
                                         },
                                         "text": "we add 4 to x"
                                     },
@@ -46,8 +46,8 @@
                                         "keyword": "Then ",
                                         "keywordType": "Outcome",
                                         "location": {
-                                            "column": 13,
-                                            "line": 7
+                                            "column": 13.0,
+                                            "line": 8.0
                                         },
                                         "text": "x should be 7"
                                     }
@@ -64,8 +64,8 @@
                                         "id": "10",
                                         "keyword": "Examples",
                                         "location": {
-                                            "column": 9,
-                                            "line": 13
+                                            "column": 9.0,
+                                            "line": 14.0
                                         },
                                         "name": "",
                                         "tableBody": [
@@ -73,90 +73,90 @@
                                                 "cells": [
                                                     {
                                                         "location": {
-                                                            "column": 15,
-                                                            "line": 15
+                                                            "column": 15.0,
+                                                            "line": 16.0
                                                         },
                                                         "value": "2"
                                                     },
                                                     {
                                                         "location": {
-                                                            "column": 20,
-                                                            "line": 15
+                                                            "column": 20.0,
+                                                            "line": 16.0
                                                         },
                                                         "value": "2"
                                                     },
                                                     {
                                                         "location": {
-                                                            "column": 25,
-                                                            "line": 15
+                                                            "column": 25.0,
+                                                            "line": 16.0
                                                         },
                                                         "value": "4"
                                                     }
                                                 ],
                                                 "id": "7",
                                                 "location": {
-                                                    "column": 13,
-                                                    "line": 15
+                                                    "column": 13.0,
+                                                    "line": 16.0
                                                 }
                                             },
                                             {
                                                 "cells": [
                                                     {
                                                         "location": {
-                                                            "column": 15,
-                                                            "line": 16
+                                                            "column": 15.0,
+                                                            "line": 17.0
                                                         },
                                                         "value": "10"
                                                     },
                                                     {
                                                         "location": {
-                                                            "column": 20,
-                                                            "line": 16
+                                                            "column": 20.0,
+                                                            "line": 17.0
                                                         },
                                                         "value": "20"
                                                     },
                                                     {
                                                         "location": {
-                                                            "column": 25,
-                                                            "line": 16
+                                                            "column": 25.0,
+                                                            "line": 17.0
                                                         },
                                                         "value": "30"
                                                     }
                                                 ],
                                                 "id": "8",
                                                 "location": {
-                                                    "column": 13,
-                                                    "line": 16
+                                                    "column": 13.0,
+                                                    "line": 17.0
                                                 }
                                             },
                                             {
                                                 "cells": [
                                                     {
                                                         "location": {
-                                                            "column": 15,
-                                                            "line": 17
+                                                            "column": 15.0,
+                                                            "line": 18.0
                                                         },
                                                         "value": "22"
                                                     },
                                                     {
                                                         "location": {
-                                                            "column": 20,
-                                                            "line": 17
+                                                            "column": 20.0,
+                                                            "line": 18.0
                                                         },
                                                         "value": "2"
                                                     },
                                                     {
                                                         "location": {
-                                                            "column": 25,
-                                                            "line": 17
+                                                            "column": 25.0,
+                                                            "line": 18.0
                                                         },
                                                         "value": "24"
                                                     }
                                                 ],
                                                 "id": "9",
                                                 "location": {
-                                                    "column": 13,
-                                                    "line": 17
+                                                    "column": 13.0,
+                                                    "line": 18.0
                                                 }
                                             }
                                         ],
@@ -164,30 +164,30 @@
                                             "cells": [
                                                 {
                                                     "location": {
-                                                        "column": 15,
-                                                        "line": 14
+                                                        "column": 15.0,
+                                                        "line": 15.0
                                                     },
                                                     "value": "a"
                                                 },
                                                 {
                                                     "location": {
-                                                        "column": 20,
-                                                        "line": 14
+                                                        "column": 20.0,
+                                                        "line": 15.0
                                                     },
                                                     "value": "b"
                                                 },
                                                 {
                                                     "location": {
-                                                        "column": 25,
-                                                        "line": 14
+                                                        "column": 25.0,
+                                                        "line": 15.0
                                                     },
                                                     "value": "c"
                                                 }
                                             ],
                                             "id": "6",
                                             "location": {
-                                                "column": 13,
-                                                "line": 14
+                                                "column": 13.0,
+                                                "line": 15.0
                                             }
                                         },
                                         "tags": []
@@ -196,8 +196,8 @@
                                 "id": "11",
                                 "keyword": "Scenario Outline",
                                 "location": {
-                                    "column": 9,
-                                    "line": 9
+                                    "column": 9.0,
+                                    "line": 10.0
                                 },
                                 "name": "Outline Addition",
                                 "steps": [
@@ -206,8 +206,8 @@
                                         "keyword": "When ",
                                         "keywordType": "Action",
                                         "location": {
-                                            "column": 13,
-                                            "line": 10
+                                            "column": 13.0,
+                                            "line": 11.0
                                         },
                                         "text": "we add the numbers <a> and <b>"
                                     },
@@ -216,8 +216,8 @@
                                         "keyword": "Then ",
                                         "keywordType": "Outcome",
                                         "location": {
-                                            "column": 13,
-                                            "line": 11
+                                            "column": 13.0,
+                                            "line": 12.0
                                         },
                                         "text": "we should get <c>"
                                     }
@@ -230,8 +230,8 @@
                     "id": "12",
                     "keyword": "Rule",
                     "location": {
-                        "column": 5,
-                        "line": 3
+                        "column": 5.0,
+                        "line": 4.0
                     },
                     "name": "Addition should work",
                     "tags": []
@@ -244,11 +244,11 @@
                             "scenario": {
                                 "description": "",
                                 "examples": [],
-                                "id": "16",
+                                "id": "17",
                                 "keyword": "Scenario",
                                 "location": {
-                                    "column": 9,
-                                    "line": 20
+                                    "column": 9.0,
+                                    "line": 22.0
                                 },
                                 "name": "Subtraction",
                                 "steps": [
@@ -257,8 +257,8 @@
                                         "keyword": "Given ",
                                         "keywordType": "Context",
                                         "location": {
-                                            "column": 13,
-                                            "line": 21
+                                            "column": 13.0,
+                                            "line": 23.0
                                         },
                                         "text": "x is equal to 10"
                                     },
@@ -267,8 +267,8 @@
                                         "keyword": "When ",
                                         "keywordType": "Action",
                                         "location": {
-                                            "column": 13,
-                                            "line": 22
+                                            "column": 13.0,
+                                            "line": 24.0
                                         },
                                         "text": "we subtract 2 from x"
                                     },
@@ -277,122 +277,131 @@
                                         "keyword": "Then ",
                                         "keywordType": "Outcome",
                                         "location": {
-                                            "column": 13,
-                                            "line": 23
+                                            "column": 13.0,
+                                            "line": 25.0
                                         },
                                         "text": "x should be 8"
                                     }
                                 ],
-                                "tags": []
+                                "tags": [
+                                    {
+                                        "id": "16",
+                                        "location": {
+                                            "column": 9.0,
+                                            "line": 21.0
+                                        },
+                                        "name": "@footag"
+                                    }
+                                ]
                             }
                         },
                         {
                             "scenario": {
                                 "description": "",
                                 "examples": [],
-                                "id": "22",
+                                "id": "23",
                                 "keyword": "Scenario",
                                 "location": {
-                                    "column": 9,
-                                    "line": 25
+                                    "column": 9.0,
+                                    "line": 27.0
                                 },
                                 "name": "Datatable",
                                 "steps": [
                                     {
                                         "dataTable": {
                                             "location": {
-                                                "column": 17,
-                                                "line": 27
+                                                "column": 17.0,
+                                                "line": 29.0
                                             },
                                             "rows": [
                                                 {
                                                     "cells": [
                                                         {
                                                             "location": {
-                                                                "column": 19,
-                                                                "line": 27
+                                                                "column": 19.0,
+                                                                "line": 29.0
                                                             },
                                                             "value": "x"
                                                         },
                                                         {
                                                             "location": {
-                                                                "column": 24,
-                                                                "line": 27
+                                                                "column": 24.0,
+                                                                "line": 29.0
                                                             },
                                                             "value": "y"
                                                         },
                                                         {
                                                             "location": {
-                                                                "column": 29,
-                                                                "line": 27
+                                                                "column": 29.0,
+                                                                "line": 29.0
                                                             },
                                                             "value": "z"
                                                         }
                                                     ],
-                                                    "id": "17",
+                                                    "id": "18",
                                                     "location": {
-                                                        "column": 17,
-                                                        "line": 27
+                                                        "column": 17.0,
+                                                        "line": 29.0
                                                     }
                                                 },
                                                 {
                                                     "cells": [
                                                         {
                                                             "location": {
-                                                                "column": 19,
-                                                                "line": 28
+                                                                "column": 19.0,
+                                                                "line": 30.0
                                                             },
                                                             "value": "10"
                                                         },
                                                         {
                                                             "location": {
-                                                                "column": 24,
-                                                                "line": 28
+                                                                "column": 24.0,
+                                                                "line": 30.0
                                                             },
                                                             "value": "11"
                                                         },
                                                         {
                                                             "location": {
-                                                                "column": 29,
-                                                                "line": 28
+                                                                "column": 29.0,
+                                                                "line": 30.0
                                                             },
                                                             "value": "12"
                                                         }
                                                     ],
-                                                    "id": "18",
+                                                    "id": "19",
                                                     "location": {
-                                                        "column": 17,
-                                                        "line": 28
+                                                        "column": 17.0,
+                                                        "line": 30.0
                                                     }
                                                 }
                                             ]
                                         },
-                                        "id": "19",
+                                        "id": "20",
                                         "keyword": "Given ",
                                         "keywordType": "Context",
                                         "location": {
-                                            "column": 13,
-                                            "line": 26
+                                            "column": 13.0,
+                                            "line": 28.0
                                         },
                                         "text": "we initialize the variables to these"
                                     },
                                     {
-                                        "id": "20",
+                                        "id": "21",
                                         "keyword": "When ",
                                         "keywordType": "Action",
                                         "location": {
-                                            "column": 13,
-                                            "line": 29
+                                            "column": 13.0,
+                                            "line": 31.0
                                         },
                                         "text": "we subtract 2 from x"
                                     },
                                     {
-                                        "id": "21",
+                                        "id": "22",
                                         "keyword": "Then ",
                                         "keywordType": "Outcome",
                                         "location": {
-                                            "column": 13,
-                                            "line": 30
+                                            "column": 13.0,
+                                            "line": 32.0
                                         },
                                         "text": "x should be 8"
                                     }
@@ -404,11 +413,11 @@
                             "scenario": {
                                 "description": "",
                                 "examples": [],
-                                "id": "26",
+                                "id": "27",
                                 "keyword": "Scenario",
                                 "location": {
-                                    "column": 9,
-                                    "line": 32
+                                    "column": 9.0,
+                                    "line": 34.0
                                 },
                                 "name": "Docstring",
                                 "steps": [
@@ -417,36 +426,36 @@
                                             "content": "    7",
                                             "delimiter": "\"\"\"",
                                             "location": {
-                                                "column": 13,
-                                                "line": 34
+                                                "column": 13.0,
+                                                "line": 36.0
                                             }
                                         },
-                                        "id": "23",
+                                        "id": "24",
                                         "keyword": "Given ",
                                         "keywordType": "Context",
                                         "location": {
-                                            "column": 13,
-                                            "line": 33
+                                            "column": 13.0,
+                                            "line": 35.0
                                         },
                                         "text": "x is the following value"
                                     },
                                     {
-                                        "id": "24",
+                                        "id": "25",
                                         "keyword": "When ",
                                         "keywordType": "Action",
                                         "location": {
-                                            "column": 13,
-                                            "line": 37
+                                            "column": 13.0,
+                                            "line": 39.0
                                         },
                                         "text": "we subtract 2 from x"
                                     },
                                     {
-                                        "id": "25",
+                                        "id": "26",
                                         "keyword": "Then ",
                                         "keywordType": "Outcome",
                                         "location": {
-                                            "column": 13,
-                                            "line": 38
+                                            "column": 13.0,
+                                            "line": 40.0
                                         },
                                         "text": "x should be 5"
                                     }
@@ -456,11 +465,11 @@
                         }
                     ],
                     "description": "",
-                    "id": "27",
+                    "id": "28",
                     "keyword": "Rule",
                     "location": {
-                        "column": 5,
-                        "line": 19
+                        "column": 5.0,
+                        "line": 20.0
                     },
                     "name": "Subtraction should work",
                     "tags": []
@@ -473,21 +482,21 @@
                             "scenario": {
                                 "description": "",
                                 "examples": [],
-                                "id": "29",
+                                "id": "30",
                                 "keyword": "Scenario",
                                 "location": {
-                                    "column": 9,
-                                    "line": 41
+                                    "column": 9.0,
+                                    "line": 43.0
                                 },
                                 "name": "Always fails",
                                 "steps": [
                                     {
-                                        "id": "28",
+                                        "id": "29",
                                         "keyword": "Given ",
                                         "keywordType": "Context",
                                         "location": {
-                                            "column": 13,
-                                            "line": 42
+                                            "column": 13.0,
+                                            "line": 44.0
                                         },
                                         "text": "a step that always fails"
                                     }
@@ -497,11 +506,11 @@
                         }
                     ],
                     "description": "",
-                    "id": "30",
+                    "id": "31",
                     "keyword": "Rule",
                     "location": {
-                        "column": 5,
-                        "line": 40
+                        "column": 5.0,
+                        "line": 42.0
                     },
                     "name": "This scenario should fail",
                     "tags": []
@@ -514,51 +523,51 @@
                             "scenario": {
                                 "description": "",
                                 "examples": [],
-                                "id": "35",
+                                "id": "36",
                                 "keyword": "Scenario",
                                 "location": {
-                                    "column": 9,
-                                    "line": 46
+                                    "column": 9.0,
+                                    "line": 48.0
                                 },
                                 "name": "Skip me",
                                 "steps": [
                                     {
-                                        "id": "31",
+                                        "id": "32",
                                         "keyword": "Given ",
                                         "keywordType": "Context",
                                         "location": {
-                                            "column": 13,
-                                            "line": 47
+                                            "column": 13.0,
+                                            "line": 49.0
                                         },
                                         "text": "x is equal to 10"
                                     },
                                     {
-                                        "id": "32",
+                                        "id": "33",
                                         "keyword": "When ",
                                         "keywordType": "Action",
                                         "location": {
-                                            "column": 13,
-                                            "line": 48
+                                            "column": 13.0,
+                                            "line": 50.0
                                         },
                                         "text": "we subtract 2 from x"
                                     },
                                     {
-                                        "id": "33",
+                                        "id": "34",
                                         "keyword": "Then ",
                                         "keywordType": "Outcome",
                                         "location": {
-                                            "column": 13,
-                                            "line": 49
+                                            "column": 13.0,
+                                            "line": 51.0
                                         },
                                         "text": "x should be 8"
                                     }
                                 ],
                                 "tags": [
                                     {
-                                        "id": "34",
+                                        "id": "35",
                                         "location": {
-                                            "column": 9,
-                                            "line": 45
+                                            "column": 9.0,
+                                            "line": 47.0
                                         },
                                         "name": "@skip"
                                     }
@@ -567,11 +576,11 @@
                         }
                     ],
                     "description": "",
-                    "id": "36",
+                    "id": "37",
                     "keyword": "Rule",
                     "location": {
-                        "column": 5,
-                        "line": 44
+                        "column": 5.0,
+                        "line": 46.0
                     },
                     "name": "This scenario should not be compiled or executed",
                     "tags": []
@@ -582,10 +591,19 @@
         "keyword": "Feature",
         "language": "en",
         "location": {
-            "column": 1,
-            "line": 1
+            "column": 1.0,
+            "line": 2.0
         },
         "name": "Calculator",
-        "tags": []
+        "tags": [
+            {
+                "id": "38",
+                "location": {
+                    "column": 1.0,
+                    "line": 1.0
+                },
+                "name": "@bartag"
+            }
+        ]
     }
 }

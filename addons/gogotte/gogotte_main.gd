@@ -11,9 +11,16 @@ func _init(gut: GutMain) -> void:
 ## Turns .feature files in the configured directories
 ## into GUT tests and outputs them to res://addons/gogotte/_out/
 func run(config_path: String = "res://.gogotteConfig") -> void:
+
     # Step 3. Retrieve .gogotteConfig
     var config: Dictionary = _get_config(config_path)
     _gut.p("[Gogotte]: Config retrieved successfully", 2)
+
+    # Load environment script
+    var env_path = config.get('environment', null)
+    if env_path != null:
+        GogotteEnvironment.load_environment_script(load(env_path) as Script)
+        _gut.p(str("[Gogotte]: Loaded environment script from ", env_path), 2)
 
     # Get gut directories
     var feature_dirs: Array = _gut.add_children_to.gut_config.options.dirs

@@ -1,3 +1,4 @@
+@bartag
 Feature: Calculator
 
     Rule: Addition should work
@@ -17,6 +18,7 @@ Feature: Calculator
             | 22 | 2  | 24 |
 
     Rule: Subtraction should work
+        @footag
         Scenario: Subtraction
             Given x is equal to 10
             When we subtract 2 from x

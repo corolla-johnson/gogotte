@@ -20,14 +20,35 @@ var docstring: Variant = null
 ## Can be Array or null.
 var datatable: Variant = null
 
+## gut test override
 func before_all() -> void:
     # Print Feature heading before each feature.
     var ast: Variant = get("FEATURE_AST")
-    if ast and ast.feature.has(name):
-        gut.p(str("Feature: ", ast.feature.name), 1)
+    if ast:
+        gut.p(str("Feature: ", ast.feature.get('name', '')), 1)
         if ast.feature.has("description") and len(ast.feature.description) > 0:
             gut.p(ast.feature.description, 1)
 
+        # Execute tag handlers
+        for tag in ast.feature.get('tags', []):
+            GogotteEnvironment.exec_before_tag(self, tag.name)
+
+        # Execute environment behaviour
+        GogotteEnvironment.exec_before_feature(self, ast.feature)
+
+## gut test override
+func after_all() -> void:
+    var ast: Variant = get("FEATURE_AST")
+    if ast:
+        # Execute environment behaviour
+        GogotteEnvironment.exec_after_feature(self, ast.feature)
+
+        # Execute tag handlers
+        for tag in ast.feature.get('tags', []):
+            GogotteEnvironment.exec_after_tag(self, tag.name)
+
+
+## gut test override
 func before_each() -> void:
     # We clear the context dictionary before each test.
     ctx.clear()
@@ -50,8 +71,12 @@ func _step(keyword: String,
            text: String,
            dataTable: Variant = null,
            docString: Variant = null) -> void:
+    GogotteEnvironment.exec_before_step(self, text)
+
     _print_step(keyword, text, dataTable, docString)
     _exec_step(keyword, text, dataTable, docString)
+
+    GogotteEnvironment.exec_after_step(self, text)
 
 ## Gets the whitespace needed to right-align 'keyword' to position 'kw_pos'.
 func _get_right_align_whitespace(kw_pos: int, keyword: String) -> String:
@@ -134,6 +159,13 @@ func _exec_step(keyword: String,
 func _begin(scenario_idx: int, outline_idx: int = -1) -> void:
     var scenario = _get_scenario(scenario_idx)
 
+    # Execute tag handlers
+    for tag in scenario.get('tags', []):
+        GogotteEnvironment.exec_before_tag(self, tag.name)
+
+    # Execute pre-scenario handler
+    GogotteEnvironment.exec_before_scenario(self, scenario)
+
     var outline_suffix = (" - Example #" + str(outline_idx + 1)) if outline_idx != -1 else ""
 
     # Print out the scenario heading.
@@ -144,6 +176,14 @@ func _begin(scenario_idx: int, outline_idx: int = -1) -> void:
 
 ## Begins the scenario.
 func _end(scenario_idx: int) -> void:
+    # Execute post-scenario handler
+    var scenario = _get_scenario(scenario_idx)
+    GogotteEnvironment.exec_after_scenario(self, scenario)
+
+    # Execute tag handlers
+    for tag in scenario.get('tags', []):
+        GogotteEnvironment.exec_after_tag(self, tag.name)
+
     # Extra newline
     gut.p("", 1)
 

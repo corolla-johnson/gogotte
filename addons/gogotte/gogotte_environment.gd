@@ -3,19 +3,22 @@ class_name GogotteEnvironment
 
 static var _instance: GogotteEnvironment = null
 
+static func load_environment_script(script: Script) -> void:
+    _instance = script.new()
+
 ## Called before each step.
-func before_step(t: GogotteTest, step: Dictionary) -> void:
+func before_step(t: GogotteTest, step: String) -> void:
     pass
 
-static func exec_before_step(t: GogotteTest, step: Dictionary) -> void:
+static func exec_before_step(t: GogotteTest, step: String) -> void:
     if _instance != null:
         _instance.before_step(t, step)
 
 ## Called after each step.
-func after_step(t: GogotteTest, step: Dictionary) -> void:
+func after_step(t: GogotteTest, step: String) -> void:
     pass
 
-static func exec_after_step(t: GogotteTest, step: Dictionary) -> void:
+static func exec_after_step(t: GogotteTest, step: String) -> void:
     if _instance != null:
         _instance.after_step(t, step)
 
