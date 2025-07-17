@@ -2,5 +2,6 @@
     "step_dirs": [
         "res://gogotte_examples/steps/"
     ],
-    "save_ast": true
+    "save_ast": true,
+    "environment": "res://gogotte_examples/example_environment.gd"
 }
