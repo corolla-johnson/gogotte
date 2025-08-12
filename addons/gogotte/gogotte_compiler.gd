@@ -185,7 +185,7 @@ func _print_step(step: Dictionary, replacements: Dictionary = {}) -> String:
         text = text.replace(key, replacements[key])
     text = text.c_escape()
 
-    script += "_step("
+    script += "await _step("
     script += '"' + step.keyword + '", "' + text + '", '
 
     if step.has("dataTable"):

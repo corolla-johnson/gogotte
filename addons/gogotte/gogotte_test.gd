@@ -53,6 +53,12 @@ func before_each() -> void:
     # We clear the context dictionary before each test.
     ctx.clear()
 
+## Prints to gut.p() but nicely indented.
+func p(text: String, log_level: int = 0) -> void:
+    var lines = text.split('\n', true)
+    for line in lines:
+        gut.p(str("          ", line), log_level)
+
 # Overrides _fail() in GutTest.
 func _fail(text: String) -> void:
     # We print a stack trace on failure.
@@ -74,7 +80,7 @@ func _step(keyword: String,
     GogotteEnvironment.exec_before_step(self, text)
 
     _print_step(keyword, text, dataTable, docString)
-    _exec_step(keyword, text, dataTable, docString)
+    await _exec_step(keyword, text, dataTable, docString)
 
     GogotteEnvironment.exec_after_step(self, text)
 
@@ -153,7 +159,7 @@ func _exec_step(keyword: String,
         docstring = null
 
     # Call the function.
-    step_def.callable.callv(args)
+    await step_def.callable.callv(args)
 
 ## Begins the scenario.
 func _begin(scenario_idx: int, outline_idx: int = -1) -> void:
