@@ -31,21 +31,21 @@ func before_all() -> void:
 
         # Execute tag handlers
         for tag in ast.feature.get('tags', []):
-            GogotteEnvironment.exec_before_tag(self, tag.name)
+            await GogotteEnvironment.exec_before_tag(self, tag.name)
 
         # Execute environment behaviour
-        GogotteEnvironment.exec_before_feature(self, ast.feature)
+        await GogotteEnvironment.exec_before_feature(self, ast.feature)
 
 ## gut test override
 func after_all() -> void:
     var ast: Variant = get("FEATURE_AST")
     if ast:
         # Execute environment behaviour
-        GogotteEnvironment.exec_after_feature(self, ast.feature)
+        await GogotteEnvironment.exec_after_feature(self, ast.feature)
 
         # Execute tag handlers
         for tag in ast.feature.get('tags', []):
-            GogotteEnvironment.exec_after_tag(self, tag.name)
+            await GogotteEnvironment.exec_after_tag(self, tag.name)
 
 
 ## gut test override
@@ -77,12 +77,12 @@ func _step(keyword: String,
            text: String,
            dataTable: Variant = null,
            docString: Variant = null) -> void:
-    GogotteEnvironment.exec_before_step(self, text)
+    await GogotteEnvironment.exec_before_step(self, text)
 
     _print_step(keyword, text, dataTable, docString)
     await _exec_step(keyword, text, dataTable, docString)
 
-    GogotteEnvironment.exec_after_step(self, text)
+    await GogotteEnvironment.exec_after_step(self, text)
 
 ## Gets the whitespace needed to right-align 'keyword' to position 'kw_pos'.
 func _get_right_align_whitespace(kw_pos: int, keyword: String) -> String:
@@ -167,10 +167,10 @@ func _begin(scenario_idx: int, outline_idx: int = -1) -> void:
 
     # Execute tag handlers
     for tag in scenario.get('tags', []):
-        GogotteEnvironment.exec_before_tag(self, tag.name)
+        await GogotteEnvironment.exec_before_tag(self, tag.name)
 
     # Execute pre-scenario handler
-    GogotteEnvironment.exec_before_scenario(self, scenario)
+    await GogotteEnvironment.exec_before_scenario(self, scenario)
 
     var outline_suffix = (" - Example #" + str(outline_idx + 1)) if outline_idx != -1 else ""
 
@@ -184,11 +184,11 @@ func _begin(scenario_idx: int, outline_idx: int = -1) -> void:
 func _end(scenario_idx: int) -> void:
     # Execute post-scenario handler
     var scenario = _get_scenario(scenario_idx)
-    GogotteEnvironment.exec_after_scenario(self, scenario)
+    await GogotteEnvironment.exec_after_scenario(self, scenario)
 
     # Execute tag handlers
     for tag in scenario.get('tags', []):
-        GogotteEnvironment.exec_after_tag(self, tag.name)
+        await GogotteEnvironment.exec_after_tag(self, tag.name)
 
     # Extra newline
     gut.p("", 1)
