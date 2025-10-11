@@ -67,6 +67,9 @@ static func gherkin_to_re_pattern(pattern: String) -> String:
     if last_end < escaped_pattern.length():
         result += escaped_pattern.substr(last_end)
 
+    # Add anchors
+    result = "^" + result + "\\Z"
+
     return result
 
 ## Preprocesses a Gherkin pattern by removing the content inside curly braces.
