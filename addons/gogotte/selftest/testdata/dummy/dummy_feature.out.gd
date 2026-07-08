@@ -7,26 +7,26 @@ var FEATURE_AST: Dictionary = {"_gogotte_metadata":{"feature_path":"res://addons
 # The index disambiguates them if they have no name.
 func test_scenario_0_first_scenario() -> void:
     _begin(0, -1)
-    _step("Given ", "I do something", null, null)
+    await _step("Given ", "I do something", null, null)
     _end(0)
 
 func test_scenario_1_second_scenario() -> void:
     _begin(1, -1)
-    _step("When ", "I do something else", null, null)
+    await _step("When ", "I do something else", null, null)
     _end(1)
 
 func test_scenario_2_third_scenario_0() -> void:
     _begin(2, 0)
-    _step("Given ", "2 is to 2 as 2 is to 4", null, null)
+    await _step("Given ", "2 is to 2 as 2 is to 4", null, null)
     _end(2)
 
 func test_scenario_2_third_scenario_1() -> void:
     _begin(2, 1)
-    _step("Given ", "10 is to 20 as 20 is to 30", null, null)
+    await _step("Given ", "10 is to 20 as 20 is to 30", null, null)
     _end(2)
 
 func test_scenario_2_third_scenario_2() -> void:
     _begin(2, 2)
-    _step("Given ", "22 is to 2 as 2 is to 24", null, null)
+    await _step("Given ", "22 is to 2 as 2 is to 24", null, null)
     _end(2)
 

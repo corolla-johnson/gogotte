@@ -18,6 +18,9 @@ var _scenario_rules: Variant = null
 ## Tracks which rule ids have already had their heading printed.
 var _printed_rule_ids: Dictionary = {}
 
+## Extra indentation applied to Scenario and step output when inside a Rule.
+var _rule_indent: String = ""
+
 ## Docstring for the currently executing step.
 ## Can be String or null.
 var docstring: Variant = null
@@ -66,7 +69,7 @@ func before_each() -> void:
 func p(text: String, log_level: int = 0) -> void:
     var lines = text.split('\n', true)
     for line in lines:
-        gut.p(str("          ", line), log_level)
+        gut.p(str("          ", _rule_indent, line), log_level)
 
 # Overrides _fail() in GutTest.
 func _fail(text: String) -> void:
@@ -106,7 +109,7 @@ func _print_step(keyword: String,
                  dataTable: Variant = null,
                  docString: Variant = null) -> void:
     var indent: String = _get_right_align_whitespace(ROW_INDENT, keyword)
-    gut.p(str(indent, keyword, text), 1)
+    gut.p(str(_rule_indent, indent, keyword, text), 1)
 
     # Prints the DataTable if the step has one.
     if dataTable != null:
@@ -122,7 +125,7 @@ func _print_step(keyword: String,
         # Actually print each row
         var row_indent = _get_right_align_whitespace(ROW_INDENT, "")
         for row in dataTable.rows:
-            var row_str: String = row_indent
+            var row_str: String = _rule_indent + row_indent
             for i in range(len(row.cells)):
                 row_str += _get_right_align_whitespace(col_widths[i], row.cells[i].value)
                 row_str += str(row.cells[i].value)
@@ -133,10 +136,10 @@ func _print_step(keyword: String,
     if docString != null:
         var row_indent = _get_right_align_whitespace(ROW_INDENT, "")
         var content_lines = docString.split("\n")
-        gut.p(str(row_indent, "\"\"\""), 1)
+        gut.p(str(_rule_indent, row_indent, "\"\"\""), 1)
         for line in content_lines:
-            gut.p(str(row_indent, line), 1)
-        gut.p(str(row_indent, "\"\"\""), 1)
+            gut.p(str(_rule_indent, row_indent, line), 1)
+        gut.p(str(_rule_indent, row_indent, "\"\"\""), 1)
 
 func _exec_step(keyword: String,
                 text: String,
@@ -173,16 +176,25 @@ func _exec_step(keyword: String,
 ## Begins the scenario.
 func _begin(scenario_idx: int, outline_idx: int = -1) -> void:
     var scenario = _get_scenario(scenario_idx)
-
-    # Print the Rule heading if this scenario belongs to a rule we haven't printed yet.
     var rule = _get_scenario_rule(scenario_idx)
+
+    print("_begin()")
+    print("scenario:", scenario.name)
     if rule != null:
+        print("rule:", rule.name)
+        # Add a bit more indentation if the scenario belongs to a rule
+        _rule_indent = "  "
+
+        # Print the Rule heading if this scenario belongs to a rule we haven't printed yet.
         var rule_id = rule.get("id", str(scenario_idx))
         if not _printed_rule_ids.has(rule_id):
             _printed_rule_ids[rule_id] = true
             gut.p(str("Rule: ", rule.get('name', '')), 1)
             if rule.has("description") and len(rule.description) > 0:
                 gut.p(rule.description, 1)
+    else:
+        # If it doesn't belong to a rule, no extra indentation
+        _rule_indent = ""
 
     # Execute tag handlers
     for tag in scenario.get('tags', []):
@@ -199,10 +211,10 @@ func _begin(scenario_idx: int, outline_idx: int = -1) -> void:
     var outline_suffix = (" - Example #" + str(outline_idx + 1)) if outline_idx != -1 else ""
 
     # Print out the scenario heading.
-    gut.p(str("Scenario: ", scenario.name, outline_suffix), 1)
+    gut.p(str(_rule_indent, "Scenario: ", scenario.name, outline_suffix), 1)
     # t.gut.p(str("Scenario: ", scenario.name), 1)
     if scenario.has("description") and len(scenario.description) > 0:
-        gut.p(scenario.description, 1)
+        gut.p(str(_rule_indent, scenario.description), 1)
 
 ## Ends the scenario.
 func _end(scenario_idx: int) -> void:
@@ -220,7 +232,7 @@ func _end(scenario_idx: int) -> void:
         await GogotteEnvironment.exec_after_tag(self, tag.name)
 
     # Extra newline
-    gut.p("", 1)
+    gut.p(str(_rule_indent), 1)
 
 func _get_scenario(idx: int) -> Dictionary:
     if _scenarios == null:

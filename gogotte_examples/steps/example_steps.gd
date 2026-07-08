@@ -14,6 +14,10 @@ var steps: Dictionary = {
     func (t: GogotteTest, number: String) -> void:
         t.ctx.x = t.ctx.x - int(number),
 
+    "we multiply x by {number}":
+    func (t: GogotteTest, number: String) -> void:
+        t.ctx.x = t.ctx.x * int(number),
+
     "we initialize the variables to these":
     func (t: GogotteTest) -> void:
         var variables: Array = t.datatable[0]

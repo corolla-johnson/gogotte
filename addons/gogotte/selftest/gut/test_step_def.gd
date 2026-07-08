@@ -2,31 +2,31 @@ extends GutTest
 
 func test_gherkin_to_re_pattern_ideal() -> void:
     var g: String = "we have {arg1}, '{arg2}' and !{arg3}"
-    var r: String = "we have (.+), '(.+)' and !(.+)"
+    var r: String = "^we have (.+), '(.+)' and !(.+)\\Z"
     var result: String = StepDef.gherkin_to_re_pattern(g)
     assert_eq(result, r, "Basic placeholder replacement failed")
 
 func test_gherkin_to_re_pattern_with_regex_chars() -> void:
     var g: String = "I have [item] with (priority) and {count} of them"
-    var r: String = "I have \\[item\\] with \\(priority\\) and (.+) of them"
+    var r: String = "^I have \\[item\\] with \\(priority\\) and (.+) of them\\Z"
     var result: String = StepDef.gherkin_to_re_pattern(g)
     assert_eq(result, r, "Regex special character escaping failed")
 
 func test_gherkin_to_re_pattern_multiple_placeholders() -> void:
     var g: String = "User {name} has {score} points and {level} level"
-    var r: String = "User (.+) has (.+) points and (.+) level"
+    var r: String = "^User (.+) has (.+) points and (.+) level\\Z"
     var result: String = StepDef.gherkin_to_re_pattern(g)
     assert_eq(result, r, "Multiple placeholders replacement failed")
 
 func test_gherkin_to_re_pattern_adjacent_placeholders() -> void:
     var g: String = "Transfer {amount} {currency} from {source}"
-    var r: String = "Transfer (.+) (.+) from (.+)"
+    var r: String = "^Transfer (.+) (.+) from (.+)\\Z"
     var result: String = StepDef.gherkin_to_re_pattern(g)
     assert_eq(result, r, "Adjacent placeholders replacement failed")
 
 func test_gherkin_already_anonymous_placeholders() -> void:
     var g: String = "Transfer {} {} from {}"
-    var r: String = "Transfer (.+) (.+) from (.+)"
+    var r: String = "^Transfer (.+) (.+) from (.+)\\Z"
     var result: String = StepDef.gherkin_to_re_pattern(g)
     assert_eq(result, r, "Already anonymous placeholders replacement failed")
 

@@ -1,6 +1,11 @@
 @bartag
 Feature: Calculator
 
+    Scenario: Multiplication
+        Given x is equal to 3
+        When we multiply x by 2
+        Then x should be 6
+
     Rule: Addition should work
         Scenario: Addition
             Given x is equal to 3
