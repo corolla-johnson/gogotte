@@ -8,11 +8,11 @@ func _init(gut: GutMain) -> void:
 
 ## Collects features from a list of directories.
 ## Returns an array of AST dictionaries.
-func collect(dirs: Array) -> Array[Dictionary]:
+func collect(dirs: Array, feature_filter: Array) -> Array[Dictionary]:
     var features: Array[Dictionary] = []
 
     for dir in dirs:
-        var dir_features = collect_dir(dir)
+        var dir_features = collect_dir(dir, feature_filter)
         features.append_array(dir_features)
 
     return features
@@ -32,7 +32,7 @@ func _get_path_absolute(path: String) -> Variant:
 
 ## Collects features from a single directory.
 ## Returns an array of AST dictionaries.
-func collect_dir(dir: String) -> Array[Dictionary]:
+func collect_dir(dir: String, feature_filter: Array) -> Array[Dictionary]:
     var dir_access: DirAccess = DirAccess.open(dir)
     var features: Array[Dictionary] = []
 
@@ -45,6 +45,16 @@ func collect_dir(dir: String) -> Array[Dictionary]:
     for filename in dir_access.get_files():
         if not filename.ends_with(".feature"):
             continue
+
+        # Only process features that match one of the filters
+        if len(feature_filter) > 0:
+            var matched: bool = false
+            for filter: String in feature_filter:
+                if filter in filename:
+                    matched = true
+                    break
+            if not matched:
+                continue
 
         var feature_path = dir.path_join(filename)
         var feature_abs_path: String = _get_path_absolute(feature_path)
@@ -94,7 +104,7 @@ func collect_dir(dir: String) -> Array[Dictionary]:
             continue
 
         var subdir_path = dir.path_join(subdir)
-        var subdir_features = collect_dir(subdir_path)
+        var subdir_features = collect_dir(subdir_path, feature_filter)
         features.append_array(subdir_features)
 
     return features

@@ -28,7 +28,7 @@ func run(config_path: String = "res://.gogotteConfig") -> void:
 
     # Step 4. Collect features
     var feature_collector: FeatureCollector = FeatureCollector.new(_gut)
-    var features: Array[Dictionary] = feature_collector.collect(feature_dirs)
+    var features: Array[Dictionary] = feature_collector.collect(feature_dirs, config.get('feature_filters', []))
     _gut.p(str("[Gogotte]: Collected ", features.size(), " feature(s)"), 1)
 
     # Step 5. Collect steps

@@ -20,6 +20,9 @@ var docstring: Variant = null
 ## Can be Array or null.
 var datatable: Variant = null
 
+## Temporary node you can attach anything to.
+var temp_node: Node = null
+
 ## gut test override
 func before_all() -> void:
     # Print Feature heading before each feature.
@@ -169,6 +172,11 @@ func _begin(scenario_idx: int, outline_idx: int = -1) -> void:
     for tag in scenario.get('tags', []):
         await GogotteEnvironment.exec_before_tag(self, tag.name)
 
+    # Create temp node
+    temp_node = Node.new()
+    temp_node.name = "GogotteTempNode"
+    add_child(temp_node)
+
     # Execute pre-scenario handler
     await GogotteEnvironment.exec_before_scenario(self, scenario)
 
@@ -180,11 +188,16 @@ func _begin(scenario_idx: int, outline_idx: int = -1) -> void:
     if scenario.has("description") and len(scenario.description) > 0:
         gut.p(scenario.description, 1)
 
-## Begins the scenario.
+## Ends the scenario.
 func _end(scenario_idx: int) -> void:
     # Execute post-scenario handler
+    # (Last chance to do things to children of temp_node)
     var scenario = _get_scenario(scenario_idx)
     await GogotteEnvironment.exec_after_scenario(self, scenario)
+
+    # Free temp_node
+    # gut.p(str("Children of temp_node: ", temp_node.get_children()))
+    temp_node.free()
 
     # Execute tag handlers
     for tag in scenario.get('tags', []):
