@@ -12,6 +12,12 @@ var ctx: Dictionary = {}
 ## Part of AST
 var _scenarios: Variant = null
 
+## Parallel to _scenarios: the rule each scenario belongs to (or null).
+var _scenario_rules: Variant = null
+
+## Tracks which rule ids have already had their heading printed.
+var _printed_rule_ids: Dictionary = {}
+
 ## Docstring for the currently executing step.
 ## Can be String or null.
 var docstring: Variant = null
@@ -168,6 +174,16 @@ func _exec_step(keyword: String,
 func _begin(scenario_idx: int, outline_idx: int = -1) -> void:
     var scenario = _get_scenario(scenario_idx)
 
+    # Print the Rule heading if this scenario belongs to a rule we haven't printed yet.
+    var rule = _get_scenario_rule(scenario_idx)
+    if rule != null:
+        var rule_id = rule.get("id", str(scenario_idx))
+        if not _printed_rule_ids.has(rule_id):
+            _printed_rule_ids[rule_id] = true
+            gut.p(str("Rule: ", rule.get('name', '')), 1)
+            if rule.has("description") and len(rule.description) > 0:
+                gut.p(rule.description, 1)
+
     # Execute tag handlers
     for tag in scenario.get('tags', []):
         await GogotteEnvironment.exec_before_tag(self, tag.name)
@@ -208,17 +224,27 @@ func _end(scenario_idx: int) -> void:
 
 func _get_scenario(idx: int) -> Dictionary:
     if _scenarios == null:
-        _scenarios = []
-        var ast: Variant = get("FEATURE_AST")
-        # Get *all* scenarios in the feature. We will execute just the one we are interested in.
-        var scenarios: Array = []
-        for child in ast.feature.children:
-            if child.has("scenario"):
-                _scenarios.append(child.scenario)
-
-            if child.has("rule"):
-                for grandchild in child.rule.children:
-                    if grandchild.has("scenario"):
-                        _scenarios.append(grandchild.scenario)
-
+        _build_scenario_index()
     return _scenarios[idx]
+
+## Returns the rule dictionary that the scenario at idx belongs to, or null.
+func _get_scenario_rule(idx: int) -> Variant:
+    if _scenario_rules == null:
+        _build_scenario_index()
+    return _scenario_rules[idx]
+
+## Populates _scenarios and _scenario_rules from the feature AST.
+func _build_scenario_index() -> void:
+    _scenarios = []
+    _scenario_rules = []
+    var ast: Variant = get("FEATURE_AST")
+    for child in ast.feature.children:
+        if child.has("scenario"):
+            _scenarios.append(child.scenario)
+            _scenario_rules.append(null)
+
+        if child.has("rule"):
+            for grandchild in child.rule.children:
+                if grandchild.has("scenario"):
+                    _scenarios.append(grandchild.scenario)
+                    _scenario_rules.append(child.rule)
