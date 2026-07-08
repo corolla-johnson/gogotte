@@ -7,52 +7,52 @@ var FEATURE_AST: Dictionary = {"_gogotte_metadata":{"feature_path":"res://gogott
 # The index disambiguates them if they have no name.
 func test_scenario_0_addition() -> void:
     _begin(0, -1)
-    _step("Given ", "x is equal to 3", null, null)
-    _step("When ", "we add 4 to x", null, null)
-    _step("Then ", "x should be 7", null, null)
+    await _step("Given ", "x is equal to 3", null, null)
+    await _step("When ", "we add 4 to x", null, null)
+    await _step("Then ", "x should be 7", null, null)
     _end(0)
 
 func test_scenario_1_outline_addition_0() -> void:
     _begin(1, 0)
-    _step("When ", "we add the numbers 2 and 2", null, null)
-    _step("Then ", "we should get 4", null, null)
+    await _step("When ", "we add the numbers 2 and 2", null, null)
+    await _step("Then ", "we should get 4", null, null)
     _end(1)
 
 func test_scenario_1_outline_addition_1() -> void:
     _begin(1, 1)
-    _step("When ", "we add the numbers 10 and 20", null, null)
-    _step("Then ", "we should get 30", null, null)
+    await _step("When ", "we add the numbers 10 and 20", null, null)
+    await _step("Then ", "we should get 30", null, null)
     _end(1)
 
 func test_scenario_1_outline_addition_2() -> void:
     _begin(1, 2)
-    _step("When ", "we add the numbers 22 and 2", null, null)
-    _step("Then ", "we should get 24", null, null)
+    await _step("When ", "we add the numbers 22 and 2", null, null)
+    await _step("Then ", "we should get 24", null, null)
     _end(1)
 
 func test_scenario_2_subtraction() -> void:
     _begin(2, -1)
-    _step("Given ", "x is equal to 10", null, null)
-    _step("When ", "we subtract 2 from x", null, null)
-    _step("Then ", "x should be 8", null, null)
+    await _step("Given ", "x is equal to 10", null, null)
+    await _step("When ", "we subtract 2 from x", null, null)
+    await _step("Then ", "x should be 8", null, null)
     _end(2)
 
 func test_scenario_3_datatable() -> void:
     _begin(3, -1)
-    _step("Given ", "we initialize the variables to these", {"location":{"column":17.0,"line":29.0},"rows":[{"cells":[{"location":{"column":19.0,"line":29.0},"value":"x"},{"location":{"column":24.0,"line":29.0},"value":"y"},{"location":{"column":29.0,"line":29.0},"value":"z"}],"id":"18","location":{"column":17.0,"line":29.0}},{"cells":[{"location":{"column":19.0,"line":30.0},"value":"10"},{"location":{"column":24.0,"line":30.0},"value":"11"},{"location":{"column":29.0,"line":30.0},"value":"12"}],"id":"19","location":{"column":17.0,"line":30.0}}]}, null)
-    _step("When ", "we subtract 2 from x", null, null)
-    _step("Then ", "x should be 8", null, null)
+    await _step("Given ", "we initialize the variables to these", {"location":{"column":17.0,"line":29.0},"rows":[{"cells":[{"location":{"column":19.0,"line":29.0},"value":"x"},{"location":{"column":24.0,"line":29.0},"value":"y"},{"location":{"column":29.0,"line":29.0},"value":"z"}],"id":"18","location":{"column":17.0,"line":29.0}},{"cells":[{"location":{"column":19.0,"line":30.0},"value":"10"},{"location":{"column":24.0,"line":30.0},"value":"11"},{"location":{"column":29.0,"line":30.0},"value":"12"}],"id":"19","location":{"column":17.0,"line":30.0}}]}, null)
+    await _step("When ", "we subtract 2 from x", null, null)
+    await _step("Then ", "x should be 8", null, null)
     _end(3)
 
 func test_scenario_4_docstring() -> void:
     _begin(4, -1)
-    _step("Given ", "x is the following value", null, "    7")
-    _step("When ", "we subtract 2 from x", null, null)
-    _step("Then ", "x should be 5", null, null)
+    await _step("Given ", "x is the following value", null, "    7")
+    await _step("When ", "we subtract 2 from x", null, null)
+    await _step("Then ", "x should be 5", null, null)
     _end(4)
 
 func test_scenario_5_always_fails() -> void:
     _begin(5, -1)
-    _step("Given ", "a step that always fails", null, null)
+    await _step("Given ", "a step that always fails", null, null)
     _end(5)
 
