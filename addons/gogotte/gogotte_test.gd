@@ -178,10 +178,7 @@ func _begin(scenario_idx: int, outline_idx: int = -1) -> void:
     var scenario = _get_scenario(scenario_idx)
     var rule = _get_scenario_rule(scenario_idx)
 
-    print("_begin()")
-    print("scenario:", scenario.name)
     if rule != null:
-        print("rule:", rule.name)
         # Add a bit more indentation if the scenario belongs to a rule
         _rule_indent = "  "
 
